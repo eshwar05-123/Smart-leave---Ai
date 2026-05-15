@@ -21,7 +21,7 @@ app.use("/api/leave", leaveRoutes);
 app.use("/api/analytics", analyticsRoutes);
 
 async function main() {
-  const uri = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/smartleave";
+  const uri = process.env.MONGODB_URI ;
   await mongoose.connect(uri, { serverSelectionTimeoutMS: 10_000 });
   console.log("MongoDB connected");
   app.listen(PORT, () => console.log(`SmartLeave API http://localhost:${PORT}`));
