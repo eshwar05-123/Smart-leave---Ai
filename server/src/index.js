@@ -9,7 +9,13 @@ import analyticsRoutes from "./routes/analytics.js";
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors({ origin: process.env.CLIENT_ORIGIN || "http://localhost:5173", credentials: true }));
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://smart-leave-ai-s32q.vercel.app/login"
+  ],
+  credentials: true
+}));
 app.use(express.json({ limit: "1mb" }));
 
 app.get("/api/health", (_req, res) => {
