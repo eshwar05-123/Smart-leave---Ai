@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 5000;
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://smart-leave-ai-s32q.vercel.app/login"
+    "https://smart-leave-ai-s32q.vercel.app"
   ],
   credentials: true
 }));
